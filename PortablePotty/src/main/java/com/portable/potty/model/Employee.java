@@ -4,10 +4,10 @@ public class Employee {
 	
 	private int id;
 	private String firstName, lastName;
-	private int phoneNumber;
+	private String phoneNumber;
 	private String address;
 	
-	public Employee(int id, String firstName, String lastName, int phoneNumber, String address) {
+	public Employee(int id, String firstName, String lastName, String phoneNumber, String address) {
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -39,11 +39,11 @@ public class Employee {
 		this.lastName = lastName;
 	}
 
-	public int getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(int phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
