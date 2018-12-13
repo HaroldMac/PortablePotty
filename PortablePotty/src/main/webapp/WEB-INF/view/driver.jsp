@@ -223,6 +223,7 @@
 		
 		<h2>The Portable Potty Worker App</h2>
 		
+		<button type="button" onclick="/driver/StartShift">Start Shift</button>
 		
 	<ul>
 		<li><p>Vehicle Safety check</p></li>
