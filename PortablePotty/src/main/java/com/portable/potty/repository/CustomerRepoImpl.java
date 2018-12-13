@@ -1,5 +1,8 @@
 package com.portable.potty.repository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.portable.potty.model.Customer;
 
 public class CustomerRepoImpl implements CustomerRepo {
@@ -30,6 +33,19 @@ public class CustomerRepoImpl implements CustomerRepo {
 		Customer c = new Customer(1, customerName, "5679 Faux Dr, Calgary NE, B3C 7D4", "Laura Ipso", "4030001755");
 		System.out.println("Returning employee with name " + c.getCustomerName());
 		return c;
+	}
+	
+	/* (non-Javadoc)
+	 * @see com.portable.potty.repository.CustomerRepo#getCustomers()
+	 */
+	@Override
+	public List<Customer> getCustomers(){
+		List<Customer> customers = new ArrayList<Customer>();
+		customers.add(new Customer(1, "FauxCompany", "5679 Faux Dr, Calgary NE, B3C 7D4", "Laura Ipso", "4030001755"));
+		customers.add(new Customer(2, "FakeCompany", "5679 Faux Dr, Calgary NE, B3C 7D4", "Dolar Sit", "4030002755"));
+		customers.add(new Customer(3, "Fakies", "5679 Faux Dr, Calgary NE, B3C 7D4", "Amet Consectetur", "4030003755"));
+		customers.add(new Customer(4, "Frauds", "5679 Faux Dr, Calgary NE, B3C 7D4", "Adip Elit", "4030004755"));
+		return customers;
 	}
 	
 	/* (non-Javadoc)

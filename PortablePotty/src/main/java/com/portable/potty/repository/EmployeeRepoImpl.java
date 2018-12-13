@@ -1,5 +1,9 @@
 package com.portable.potty.repository;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.portable.potty.model.Customer;
 import com.portable.potty.model.Employee;
 
 public class EmployeeRepoImpl implements EmployeeRepo {
@@ -38,6 +42,19 @@ public class EmployeeRepoImpl implements EmployeeRepo {
 	@Override
 	public void removeEmployee(Employee employee) {
 		System.out.println("Removing " + employee.getFirstName() + " " + employee.getLastName());
+	}
+	
+	/* (non-Javadoc)
+	 * @see com.portable.potty.repository.EmployeeRepo#getEmployees()
+	 */
+	@Override
+	public List<Employee> getEmployees(){
+		List<Employee> employees = new ArrayList<Employee>();
+		employees.add(new Employee(1, "John", "Doe", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3"));
+		employees.add(new Employee(2, "Jane", "Doe", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3"));
+		employees.add(new Employee(3, "Sakura", "Haruna", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3"));
+		employees.add(new Employee(4, "Tidus", "Jecht", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3"));
+		return employees;
 	}
 
 }
