@@ -4,7 +4,6 @@ import com.portable.potty.model.Customer;
 
 public class CustomerRepoImpl implements CustomerRepo {
 	
-//public Customer(int id, String customerName, String address, String contactName, int phoneNumber) {
 	/* (non-Javadoc)
 	 * @see com.portable.potty.repository.CustomerRepo#addCustomer(com.portable.potty.model.Customer)
 	 */
