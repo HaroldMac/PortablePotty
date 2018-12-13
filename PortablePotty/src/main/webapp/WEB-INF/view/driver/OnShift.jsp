@@ -222,7 +222,7 @@
 	<div class="body">
 		
 		<h2>The Portable Potty Worker App</h2>
-		<a href='/driver/StartShift'><button>Start Shift</button></a>
+		<a href="/driver/EndShift"><button>Done Shift</button></a>
 		
 		<table>
 			<tr>
@@ -317,7 +317,7 @@
 			</table>
 		</div>	
 
-	<a href="/driver/EndShift"><button>Done Shift</button></a>
+	
 
 	<div class="footer">
 
