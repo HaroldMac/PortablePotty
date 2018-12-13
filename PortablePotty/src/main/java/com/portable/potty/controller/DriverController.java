@@ -17,7 +17,19 @@ public class DriverController {
 	@RequestMapping(value="/driver/StartShift", method = RequestMethod.GET)
 	public String driverInspection(){
 		System.out.println("driver start shift controller called");
-		return "driver/StartShift";		
+		return "/driver/StartShift";		
+	}
+	
+	@RequestMapping(value="/driver/OnShift", method = RequestMethod.GET)
+	public String driverOnShift(){
+		System.out.println("driver on shift controller called");
+		return "/driver/OnShift";		
+	}
+	
+	@RequestMapping(value="/driver/EndShift", method = RequestMethod.GET)
+	public String driverEndShift(){
+		System.out.println("driver end shift controller called");
+		return "/driver/EndShift";		
 	}
 	
 	

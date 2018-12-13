@@ -220,18 +220,19 @@
 	</div>
 	
 	<div class="body">
-		<ul>
-			<input type="checkbox" name="VehicleInspectionList" value="start">Fuel
-			<input type="checkbox" name="VehicleInspectionList" value="start">Oil
-			<input type="checkbox" name="VehicleInspectionList" value="start">Transmission Fluid
-			<input type="checkbox" name="VehicleInspectionList" value="start">Body
-			<input type="checkbox" name="VehicleInspectionList" value="start">Tires
-			<input type="checkbox" name="VehicleInspectionList" value="start">lights
-			<input type="checkbox" name="VehicleInspectionList" value="start">Radio<br>
-			Initial Odometer Reading <input type="text" name="StartOdometer"><br>
-			<a href="/driver/OnShift"><button >Ready to GO!</button></a>
-		</ul>
-	</div>
+		<h2>The Portable Potty Worker App</h2>
+		<input type="checkbox" name="EOSCheckList" value="done">Re-Fueled
+		<input type="checkbox" name="EOSCheckList" value="done">Sewage Dumped
+		<input type="checkbox" name="EOSCheckList" value="done">Refilled Water
+		<input type="checkbox" name="EOSCheckList" value="done">Refilled Supplies
+		<input type="checkbox" name="EOSCheckList" value="done">Handed in Paper Work
+		<input type="checkbox" name="EOSCheckList" value="done">Parked Vehicle
+		<input type="checkbox" name="EOSCheckList" value="done">Site Locked<br>
+		<input type="checkbox" name="EOSCheckList" value="done">Check All<br>
+		Final Odometer<input type="text" name="FinalOdometer"><br>
+		<a href='/'><button>End Shift</button></a>
+	</div>	
+
 
 	<div class="footer">
 
@@ -243,23 +244,6 @@
 			</div>  
 	</div>
 
-
-	<script>
-	var coll = document.getElementsByClassName("collapsible");
-	var i;
-	
-	for (i = 0; i < coll.length; i++) {
-	    coll[i].addEventListener("click", function() {
-	        this.classList.toggle("active");
-	        var content = this.nextElementSibling;
-	        if (content.style.display === "block") {
-	            content.style.display = "none";
-	        } else {
-	            content.style.display = "block";
-	        }
-	    });
-	}
-	</script>
 
 </body>
 </html>
