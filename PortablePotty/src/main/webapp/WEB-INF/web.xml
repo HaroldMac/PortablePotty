@@ -22,7 +22,7 @@
  
   <servlet-mapping>
   	<servlet-name>PortablePottyServlet</servlet-name>
-  	<url-pattern>/style/style.css</url-pattern>
+  	<url-pattern>style/style.css</url-pattern>
   </servlet-mapping>
   
 </web-app>

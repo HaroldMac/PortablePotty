@@ -229,7 +229,7 @@
 			<input type="checkbox" name="VehicleInspectionList" value="start">lights
 			<input type="checkbox" name="VehicleInspectionList" value="start">Radio<br>
 			Initial Odometer Reading <input type="text" name="StartOdometer"><br>
-			<a href="/DriverOnShift.html"><button >Ready to GO!</button></a>
+			<a href="/driver/OnShift.html"><button >Ready to GO!</button></a>
 		</ul>
 	</div>
 

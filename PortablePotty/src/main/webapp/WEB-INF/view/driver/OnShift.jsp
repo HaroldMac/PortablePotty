@@ -222,7 +222,7 @@
 	<div class="body">
 		
 		<h2>The Portable Potty Worker App</h2>
-		<a href="/DriverEndShift.html"><button>Done Shift</button></a>
+		<a href="/driver/EndShift.html"><button>Done Shift</button></a>
 		
 		<table>
 			<tr>
