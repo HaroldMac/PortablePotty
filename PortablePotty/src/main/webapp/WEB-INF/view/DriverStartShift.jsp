@@ -211,7 +211,7 @@
 	<div id="header">
 		<nav>		
 			<ul>		
-				<li><a href="/login">Sign In</a></li>
+				<li><a href="/login.html">Sign In</a></li>
 			</ul>
 			<br>
 		<H1>Portable Potty</H1>	
@@ -229,7 +229,7 @@
 			<input type="checkbox" name="VehicleInspectionList" value="start">lights
 			<input type="checkbox" name="VehicleInspectionList" value="start">Radio<br>
 			Initial Odometer Reading <input type="text" name="StartOdometer"><br>
-			<a href="/driver/OnShift"><button >Ready to GO!</button></a>
+			<a href="/DriverOnShift.html"><button >Ready to GO!</button></a>
 		</ul>
 	</div>
 
@@ -242,24 +242,6 @@
 				tel: (403) 606-3504 <br><br>
 			</div>  
 	</div>
-
-
-	<script>
-	var coll = document.getElementsByClassName("collapsible");
-	var i;
-	
-	for (i = 0; i < coll.length; i++) {
-	    coll[i].addEventListener("click", function() {
-	        this.classList.toggle("active");
-	        var content = this.nextElementSibling;
-	        if (content.style.display === "block") {
-	            content.style.display = "none";
-	        } else {
-	            content.style.display = "block";
-	        }
-	    });
-	}
-	</script>
 
 </body>
 </html>

@@ -211,7 +211,7 @@
 	<div id="header">
 		<nav>		
 			<ul>		
-				<li><a href="/login">Sign In</a></li>
+				<li><a href="/login.html">Sign In</a></li>
 			</ul>
 			<br>
 		<H1>Portable Potty</H1>	
@@ -222,7 +222,7 @@
 	<div class="body">
 		
 		<h2>The Portable Potty Worker App</h2>
-		<a href="/driver/EndShift"><button>Done Shift</button></a>
+		<a href="/DriverEndShift.html"><button>Done Shift</button></a>
 		
 		<table>
 			<tr>

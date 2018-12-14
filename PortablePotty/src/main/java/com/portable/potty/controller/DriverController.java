@@ -14,22 +14,22 @@ public class DriverController {
 		return "driver";		
 	}
 	
-	@RequestMapping(value="/driver/StartShift", method = RequestMethod.GET)
+	@RequestMapping(value="/DriverStartShift", method = RequestMethod.GET)
 	public String driverInspection(){
 		System.out.println("driver start shift controller called");
-		return "/driver/StartShift";		
+		return "/DriverStartShift";		
 	}
 	
-	@RequestMapping(value="/driver/OnShift", method = RequestMethod.GET)
+	@RequestMapping(value="/DriverOnShift", method = RequestMethod.GET)
 	public String driverOnShift(){
 		System.out.println("driver on shift controller called");
-		return "/driver/OnShift";		
+		return "/DriverOnShift";		
 	}
 	
-	@RequestMapping(value="/driver/EndShift", method = RequestMethod.GET)
+	@RequestMapping(value="/DriverEndShift", method = RequestMethod.GET)
 	public String driverEndShift(){
 		System.out.println("driver end shift controller called");
-		return "/driver/EndShift";		
+		return "/DriverEndShift";		
 	}
 	
 	

@@ -189,7 +189,7 @@
 	<div id="header">
 		<nav>		
 			<ul>		
-				<li><a href="/login">Sign In</a></li>
+				<li><a href="/login.html">Sign In</a></li>
 			</ul>
 			<br>
 		<H1>Portable Potty</H1>	
@@ -212,9 +212,9 @@
 						<br><br>
 						<input type="submit" value="Sign In" onclick="signin()">
 						</div>
-						<a href="/driver"> Driver</a>
-						<a href="/dispatcher"> Dispatcher</a>
-						<a href="/admin"> Admin</a>
+						<a href="/driver.html"> Driver</a>
+						<a href="/dispatcher.html"> Dispatcher</a>
+						<a href="/admin.html"> Admin</a>
 					</div>
 			</form>
 		</div>
