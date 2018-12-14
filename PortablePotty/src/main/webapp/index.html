@@ -73,28 +73,7 @@
 		text-align: center;
 	}
 	
-	/**
-	 * Header Responsive Styles
-	 */
 	
-	
-	@media screen and (max-width: 800px){
-	
-		nav ul{
-			width: 100%;
-		}
-	
-		nav li a{
-			text-align: center;
-			padding: 0;
-		}
-		
-		nav H1{
-			font-size: 2em;
-			text-align: center;
-			padding: 0.5em;
-		}
-	}
 	
 	/**
 	 * Body Styles
@@ -128,8 +107,36 @@
 	  margin-top: 0;
 	}
 	
-	.body h4 {
-	  text-align: left;
+	.body p {
+	  text-align: center;
+	  margin: 1em 1em 0.5em 1em;
+	}
+	
+	.boxes{
+		text-align: right;
+	}
+	
+	input[type="text"] {
+	  margin-bottom: -1px;
+	  border-bottom-left-radius: 0;
+	  border-bottom-right-radius: 0;
+	}
+	
+	input[type="password"] {
+	  margin-bottom: 20px;
+	  border-top-left-radius: 0;
+	  border-top-right-radius: 0;
+	}
+	
+	input[type="submit"] {
+	  margin-bottom: 20px;
+	}
+	
+	
+	
+	.formContainer{
+		border: 1px solid #333;
+		background-color: #555;
 	}
 		
 	/**
@@ -150,10 +157,55 @@
 	   height:100%;
 	}
 	
-		
+	/**
+	 * Header Responsive Styles
+	 */
+
+	if (/mobile/i.test(navigator.userAgent)) {
+		nav ul{
+			position: absolute;
+			width: 100%;
+		}
 	
-	</style>
+		nav li a{
+			text-align: center;
+			padding: 0;
+		}
 		
+		nav H1{
+			font-size: 2em;
+			text-align: center;
+			padding: 0.5em;
+		}
+		
+		.body {
+	  		max-width: 100%;
+	  	}
+	
+	}
+	
+	@media screen and (max-width: 800px){
+	
+		nav ul{	
+			position: absolute;
+			width: 100%;
+		}
+	
+		nav li a{
+			text-align: center;
+			padding: 0;
+		}
+		
+		nav H1{
+			font-size: 2em;
+			text-align: center;
+			padding: 0.5em;
+		}
+		.body {
+	  		max-width: 100%;
+	  	}
+	}	
+	</style>
 </head>
 <body>
 	<div id="header">

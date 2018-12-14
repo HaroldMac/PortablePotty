@@ -72,32 +72,7 @@
 		margin: 0;
 		text-align: center;
 	}
-	
-	/**
-	 * Header Responsive Styles
-	 */
-	
-	
-	@media screen and (max-width: 800px){
-	
-		nav ul{
 		
-		position: absolute;
-			width: 100%;
-		}
-	
-		nav li a{
-			text-align: center;
-			padding: 0;
-		}
-		
-		nav H1{
-			font-size: 2em;
-			text-align: center;
-			padding: 0.5em;
-		}
-	}
-	
 	/**
 	 * Body Styles
 	 */
@@ -155,8 +130,6 @@
 	  margin-bottom: 20px;
 	}
 	
-	
-	
 	.formContainer{
 		border: 1px solid #333;
 		background-color: #555;
@@ -180,7 +153,54 @@
 	   height:100%;
 	}
 	
+	/**
+	 * Header Responsive Styles
+	 */
+
+	if (/mobile/i.test(navigator.userAgent)) {
+		nav ul{
+			position: absolute;
+			width: 100%;
+		}
+	
+		nav li a{
+			text-align: center;
+			padding: 0;
+		}
 		
+		nav H1{
+			font-size: 2em;
+			text-align: center;
+			padding: 0.5em;
+		}
+		
+		.body {
+	  		max-width: 100%;
+	  	}
+	
+	}
+	
+	@media screen and (max-width: 800px){
+	
+		nav ul{	
+			position: absolute;
+			width: 100%;
+		}
+	
+		nav li a{
+			text-align: center;
+			padding: 0;
+		}
+		
+		nav H1{
+			font-size: 2em;
+			text-align: center;
+			padding: 0.5em;
+		}
+		.body {
+	  		max-width: 100%;
+	  	}
+	}			
 	
 	</style>
 		
