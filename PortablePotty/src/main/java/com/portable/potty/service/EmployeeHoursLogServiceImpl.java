@@ -11,11 +11,15 @@ import com.portable.potty.repository.EmployeeHoursLogRepo;
 import com.portable.potty.repository.EmployeeHoursLogRepoImpl;
 
 @Service
-public class EmployeeHoursLogServiceImpl {
+public class EmployeeHoursLogServiceImpl implements EmployeeHoursLogService {
 	
 	@Autowired
 	EmployeeHoursLogRepo employeeHoursLogRepo = new EmployeeHoursLogRepoImpl();
 	
+	/* (non-Javadoc)
+	 * @see com.portable.potty.service.EmployeeHoursLogService#employeeLogIn(com.portable.potty.model.Employee)
+	 */
+	@Override
 	public void employeeLogIn(Employee employee) {
 		Calendar cal = Calendar.getInstance();
 		
@@ -25,6 +29,10 @@ public class EmployeeHoursLogServiceImpl {
 		employeeHoursLogRepo.logIn(employee, cal);
 	}
 	
+	/* (non-Javadoc)
+	 * @see com.portable.potty.service.EmployeeHoursLogService#employeeLogOut(com.portable.potty.model.Employee)
+	 */
+	@Override
 	public void employeeLogOut(Employee employee) {
 		Calendar cal = Calendar.getInstance();
 		
