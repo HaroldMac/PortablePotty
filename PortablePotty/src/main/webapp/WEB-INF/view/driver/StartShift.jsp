@@ -39,7 +39,7 @@
 		list-style-type: none;
 		margin: 0.5em 0;
 		top: 0;
-		width: 95%;
+		width: 73.5%;
 		text-align: center;
 	}
 	
@@ -134,6 +134,25 @@
 		border: 1px solid #333;
 		background-color: #555;
 	}
+
+	#readToStartButton{
+		border: outset;
+		font-size: 2em;
+		color: #fcfcfc;
+		cursor: pointer;
+		position: relative;
+		margin: 0.5em;	
+		font-family: "Helvetica Neue", Arial, sans-serif;
+	}
+	
+	#readToStartButton {
+		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	}
+	
+	#vehicleSafeyCheckList {
+		text-align: left;
+		
+	}
 		
 	/**
 	 * Footer Styles
@@ -218,17 +237,21 @@
 	</div>
 	
 	<div class="body">
-		<ul>
+	
+		<h2>Vehicle Safety and Inspection CheckList</h2>
+		
+			
 			<input type="checkbox" name="VehicleInspectionList" value="start">Fuel
-			<input type="checkbox" name="VehicleInspectionList" value="start">Oil
-			<input type="checkbox" name="VehicleInspectionList" value="start">Transmission Fluid
+			<input type="checkbox" name="VehicleInspectionList" value="start">Oil  
+			<input type="checkbox" name="VehicleInspectionList" value="start">Transmission Fluid<br>
 			<input type="checkbox" name="VehicleInspectionList" value="start">Body
 			<input type="checkbox" name="VehicleInspectionList" value="start">Tires
-			<input type="checkbox" name="VehicleInspectionList" value="start">lights
-			<input type="checkbox" name="VehicleInspectionList" value="start">Radio<br>
+			<input type="checkbox" name="VehicleInspectionList" value="start">lights 
+			<input type="checkbox" name="VehicleInspectionList" value="start">Radio<br><br>
 			Initial Odometer Reading <input type="text" name="StartOdometer"><br>
-			<a href="/driver/OnShift.html"><button >Ready to GO!</button></a>
-		</ul>
+			
+		
+		<a href="/driver/OnShift.html"><button id="readToStartButton">Ready to GO!</button></a>
 	</div>
 
 	<div class="footer">

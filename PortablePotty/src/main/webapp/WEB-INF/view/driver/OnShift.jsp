@@ -14,6 +14,7 @@
 	  box-sizing: border-box;
 	  background-color: #595959;
 	  color: #fcfcfc;
+
 	}
 	
 	*,
@@ -39,7 +40,7 @@
 		list-style-type: none;
 		margin: 0.5em 0;
 		top: 0;
-		width: 95%;
+		width: 73.5%;
 		text-align: center;
 	}
 	
@@ -110,30 +111,52 @@
 	  margin: 1em 1em 0.5em 1em;
 	}
 	
+	.body table{
+		border: 2px;
+	}
+	
 	.boxes{
 		text-align: right;
 	}
 	
-	input[type="text"] {
-	  margin-bottom: -1px;
-	  border-bottom-left-radius: 0;
-	  border-bottom-right-radius: 0;
+	#calls {
+  		font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  		border-collapse: collapse;
+  		width: 100%;
+	}
+
+	#calls td, #calls th {
+  		border: 1px solid #ddd;
+  		padding: 0.25em;
+	}
+
+	#calls tr:nth-child(even){
+		background-color: gray;
+	}
+
+	#calls tr:hover {background-color: #ddd;}
+
+	#calls th {
+  		padding-top: 12px;
+  		padding-bottom: 12px;
+  		text-align: left;
+  		background-color: #333;
 	}
 	
-	input[type="password"] {
-	  margin-bottom: 20px;
-	  border-top-left-radius: 0;
-	  border-top-right-radius: 0;
+	#doneCallsButton{
+		border: outset;
+		font-size: 2em;
+		color: #fcfcfc;
+		cursor: pointer;
+		position: relative;
+		margin: 0.25em;	
+		font-family: "Helvetica Neue", Arial, sans-serif;
 	}
 	
-	input[type="submit"] {
-	  margin-bottom: 20px;
+	#doneCallsButton {
+		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 	}
 	
-	.formContainer{
-		border: 1px solid #333;
-		background-color: #555;
-	}
 		
 	/**
 	 * Footer Styles
@@ -177,6 +200,12 @@
 		.body {
 	  		max-width: 100%;
 	  	}
+	  	
+	  	html {
+	  		width: 100%;
+	  		right: 0;
+	  		position: relative;
+		}
 	
 	}
 	
@@ -200,6 +229,12 @@
 		.body {
 	  		max-width: 100%;
 	  	}
+	  	
+	  	html {
+	  		width: 100%;
+	  		right: 0;
+	  		position: relative;
+		}
 	}			
 	
 	</style>
@@ -218,102 +253,74 @@
 	</div>
 	
 	<div class="body">
-		
 		<h2>The Portable Potty Worker App</h2>
-		<a href="/driver/EndShift.html"><button>Done Shift</button></a>
-		
-		<table>
+		<table id="calls">
 			<tr>
 				<th></th>
-				<th>Cleaned</th>
-				<th>Company</th>
-				<th>Contact</th>
-				<th>Phone Number</th>
-			        <th>Address</th>
+				<th style="text-decoration: underline;">Service</th>
+				<th style="text-decoration: underline;">Company</th>
+				<th style="text-decoration: underline;">Contact</th>
+				<th style="text-decoration: underline;">Phone Number</th>
+			    <th style="text-decoration: underline;">Current Address</th>
+			    <th style="text-decoration: underline;">New Address</th>
 			</tr>
 			<tr>
-				<th><img src="PortableFinder/portable.png" style = "width:32px; height:32px; border:0;"></th>
-				<th><input type="checkbox" name="vehicle" value="FakeCompany"></th>
-				<th>Fake Company</th>
-				<th>Tony Gomez</th>
-				<th>(403)000-0001</th>
-		        <th><a href="https://www.google.ca/maps/place/5050+Spruce+Dr+SW,+Calgary,+AB+T3C+3B2" target="_blank">5050 Spruce Dr SW, Calgary, AB T3C 3B2 </a> </th>
+				<td><img src="PortableFinder/portable.png" style = "width:32px; height:32px; border:0;"></td>
+				<td>Cleaning</td>
+				<td>Fake Company</td>
+				<td>Tony Gomez</td>
+				<td>(403)000-0001</td>
+		        <td><a href="https://www.google.ca/maps/place/5050+Spruce+Dr+SW,+Calgary,+AB+T3C+3B2" target="_blank">5050 Spruce Dr SW, Calgary, AB T3C 3B2 </a> </td>
+		        <td></td>
 			</tr>
 			<tr>
-				<th><img src="PortableFinder/portable.png" style = "width:32px; height:32px; border:0;"></th>
-				<th><input type="checkbox" name="vehicle" value="FakesRUs"></th>
-				<th>Fakes-R-Us</th>
-				<th>Sherry Stone </th> 
-				<th>(403)000-0010</th>
-			    <th><a href="https://www.google.ca/maps/place/4011+1a+St+SW,+Calgary,+AB+T2S+2P5" target="_blank">4011 1a St SW, Calgary, AB T2S 2P5</a></th>
+				<td><img src="PortableFinder/portable.png" style = "width:32px; height:32px; border:0;"></td>
+				<td>Cleaning</td>
+				<td>Fakes-R-Us</td>
+				<td>Sherry Stone </td> 
+				<td>(403)000-0010</td>
+			    <td><a href="https://www.google.ca/maps/place/4011+1a+St+SW,+Calgary,+AB+T2S+2P5" target="_blank">4011 1a St SW, Calgary, AB T2S 2P5</a></td>
+			    <td></td>
 			</tr>
 			<tr>
-				<th><img src="PortableFinder/portable.png" style = "width:32px; height:32px; border:0;"></th>
-				<th><input type="checkbox" name="vehicle" value="Fakies"></th>
-				<th>Fakies</th>
-				<th>Jared Su </th> 
-				<th>(403) 000-0011</th>
-			    <th><a href="https://www.google.ca/maps/place/50.897982,-114.011723" target="_blank">Fish Creek Park</a></th>
+				<td><img src="PortableFinder/portable.png" style = "width:32px; height:32px; border:0;"></td>
+				<td>Cleaning</td>
+				<td>Fakies</td>
+				<td>Jared Su </td> 
+				<td>(403) 000-0011</td>
+			    <td><a href="https://www.google.ca/maps/place/50.897982,-114.011723" target="_blank">Fish Creek Park</a></td>
+			    <td></td>
 			</tr>
-
-
-		</div>
-				<tr>
-					<th></th>
-					<th>Delivered</th>
-					<th>Company</th>
-					<th>Contact</th>
-					<th>Phone Number</th>
-				        <th>Address</th>
-				</tr>
-				<tr>
-					<th><img src="PortableFinder/portable.png"style = "width:32px; height:32px; border:0;"></th>
-					<th><input type="checkbox" name="vehicle" value="NewCompany"></th>
-					<th>New Company</th>
-					<th>Terry Cloth</th>
-					<th>(403)000-0100</th>
-				        <th><a href="https://www.google.ca/maps/place/Range+Road+53,+Sexsmith,+AB+T0H+3C0" target="_blank">Range Road 53, Sexsmith, AB T0H 3C0</a> </th>
-				</tr>
-
-
-	
-				<tr>
-					<th></th>
-					<th>Relocated</th>
-					<th>Company</th>
-					<th>Contact</th>
-					<th>Phone Number</th>
-				        <th>Address</th>
-				        <th>New Address</th>
-				</tr>
-				<tr>
-					<th><img src="PortableFinder/portable.png" style = "width:32px; height:32px; border:0;"></th>
-					<th><input type="checkbox" name="vehicle" value="FakeCompany"></th>
-					<th>Moving Company</th>
-					<th>Likes T Movitt</th>
-					<th>(403)000-0101</th>
-				        <th><a href="https://www.google.ca/maps/place/5050+Spruce+Dr+SW,+Calgary,+AB+T3C+3B2" target="_blank">1301 16 Ave NW, Calgary, AB T2M 0L4 </a> </th>
-				        <th><a href="https://www.google.ca/maps/place/51.1885508,-114.4729189" target="_blank">Canyon Meadows Golf Club </a> </th>
-				</tr>	
-				<tr>
-					<th></th>
-					<th>Removed</th>
-					<th>Company</th>
-					<th>Contact</th>
-					<th>Phone Number</th>
-				        <th>Address</th>
-				</tr>
-				<tr>
-					<th><img src="PortableFinder/portable.png" alt="harold.macdonald52@gmail.com" style = "width:32px; height:32px; border:0;"></th>
-					<th><input type="checkbox" name="vehicle" value="Fakies"></th>
-					<th>Fakies</th>
-					<th>Jared Su </th> 
-					<th>(403) 000-0011</th>
-				        <th><a href="https://www.google.ca/maps/place/50.897982,-114.011723" target="_blank">Fish Creek Park</a></th>
-				</tr>
-
-			</table>
-		</div>	
+			<tr>
+				<td><img src="PortableFinder/portable.png"style = "width:32px; height:32px; border:0;"></td>
+				<td>Deliver</td>
+				<td>New Company</td>
+				<td>Terry Cloth</td>
+				<td>(403)000-0100</td>
+				<td><a href="https://www.google.ca/maps/place/Range+Road+53,+Sexsmith,+AB+T0H+3C0" target="_blank">Range Road 53, Sexsmith, AB T0H 3C0</a> </td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><img src="PortableFinder/portable.png" style = "width:32px; height:32px; border:0;"></td>
+				<td>Relocation</td>
+				<td>Moving Company</td>
+				<td>Likes T Movitt</td>
+				<td>(403)000-0101</td>
+				<td><a href="https://www.google.ca/maps/place/5050+Spruce+Dr+SW,+Calgary,+AB+T3C+3B2" target="_blank">1301 16 Ave NW, Calgary, AB T2M 0L4 </a> </td>
+				<td><a href="https://www.google.ca/maps/place/51.1885508,-114.4729189" target="_blank">Canyon Meadows Golf Club </a> </td>
+			</tr>	
+			<tr>
+				<td><img src="PortableFinder/portable.png" style = "width:32px; height:32px; border:0;"></td>
+				<td>Removal</td>
+				<td>Fakies</td>
+				<td>Jared Su </td> 
+				<td>(403) 000-0011</td>
+			    <td><a href="https://www.google.ca/maps/place/50.897982,-114.011723" target="_blank">Fish Creek Park</a></td>
+			    <td></td>
+			</tr>
+		</table>
+		<a href="/driver/EndShift.html"><button id="doneCallsButton">Done Calls</button></a>
+	</div>	
 
 	
 

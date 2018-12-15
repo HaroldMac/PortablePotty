@@ -39,7 +39,7 @@
 		list-style-type: none;
 		margin: 0.5em 0;
 		top: 0;
-		width: 95%;
+		width: 73.5%;
 		text-align: center;
 	}
 	

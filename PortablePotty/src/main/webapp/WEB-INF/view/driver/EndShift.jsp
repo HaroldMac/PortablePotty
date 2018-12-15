@@ -39,7 +39,7 @@
 		list-style-type: none;
 		margin: 0.5em 0;
 		top: 0;
-		width: 95%;
+		width: 73.5%;
 		text-align: center;
 	}
 	
@@ -73,6 +73,22 @@
 		text-align: center;
 	}
 	
+	#endShiftButton{
+		
+		background-color: red;
+		border: outset;
+		font-size: 2em;
+		color: #fcfcfc;
+		cursor: pointer;
+		position: relative;
+		margin: 0.25em;	
+		font-family: "Helvetica Neue", Arial, sans-serif;
+	}
+	
+	#endShiftButton {
+		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	}
+
 	/**
 	 * Header Responsive Styles
 	 */
@@ -230,7 +246,7 @@
 		<input type="checkbox" name="EOSCheckList" value="done">Site Locked<br>
 		<input type="checkbox" name="EOSCheckList" value="done">Check All<br>
 		Final Odometer<input type="text" name="FinalOdometer"><br>
-		<a href='/'><button>End Shift</button></a>
+		<a href='/'><button id="endShiftButton">End Shift</button></a>
 	</div>	
 
 

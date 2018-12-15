@@ -19,6 +19,7 @@ public class EmployeeHoursLogRepoImpl implements EmployeeHoursLogRepo {
 	 */
 	@Override
 	public void logIn(Employee employee, Calendar c) {
+		System.out.println("EmployeeHoursLogRepoImpl: logIn");
 		System.out.println(employee.getFirstName() + " is loggin in at " + c.toString());
 		tempRepo.add(employee.getFirstName() + " is loggin in at " + c.toString());
 	}
@@ -28,7 +29,8 @@ public class EmployeeHoursLogRepoImpl implements EmployeeHoursLogRepo {
 	 */
 	@Override
 	public void logOut(Employee employee, Calendar c) {
-		System.out.println(employee.getFirstName() + " is loggin in at " + c.toString());
+		System.out.println("EmployeeHoursLogRepoImpl: logOut");
+		System.out.println(employee.getFirstName() + " is loggin out at " + c.toString());
 	}
 	
 	/* (non-Javadoc)
