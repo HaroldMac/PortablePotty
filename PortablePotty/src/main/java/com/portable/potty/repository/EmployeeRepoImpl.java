@@ -3,9 +3,12 @@ package com.portable.potty.repository;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.portable.potty.model.Customer;
 import com.portable.potty.model.Employee;
 
+@Repository
 public class EmployeeRepoImpl implements EmployeeRepo {
 	
 	/* (non-Javadoc)

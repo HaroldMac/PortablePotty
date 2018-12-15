@@ -1,7 +1,10 @@
 package com.portable.potty.repository;
 
+import org.springframework.stereotype.Repository;
+
 import com.portable.potty.model.Vehicle;
 
+@Repository
 public class VehicleRepoImpl implements VehicleRepo {
 	
 	/* (non-Javadoc)

@@ -1,8 +1,11 @@
 package com.portable.potty.repository;
 
+import org.springframework.stereotype.Repository;
+
 import com.portable.potty.model.Call;
 import com.portable.potty.model.Customer;
 
+@Repository
 public class CallRepoImpl {
 	
 	//public Call(String service, String location, int biWeeklyFrequency, Customer customer) {

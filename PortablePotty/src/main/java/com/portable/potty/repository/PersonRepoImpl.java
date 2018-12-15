@@ -3,8 +3,11 @@ package com.portable.potty.repository;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.portable.potty.model.Person;
 
+@Repository
 public class PersonRepoImpl implements PersonRepo {
 	
 	/* (non-Javadoc)
