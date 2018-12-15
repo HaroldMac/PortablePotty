@@ -19,10 +19,19 @@ public class EmployeeHoursLogServiceImpl {
 	public void employeeLogIn(Employee employee) {
 		Calendar cal = Calendar.getInstance();
 		
-		System.out.println("Employee Hour service ");
+		System.out.println("Employee Hour service log in");
 		System.out.println("Employee: " + employee.getFirstName() + " " + employee.getLastName() + " is starting shift");
 		System.out.println("It is currently: " + cal.getTime());
 		employeeHoursLogRepo.logIn(employee, cal);
+	}
+	
+	public void employeeLogOut(Employee employee) {
+		Calendar cal = Calendar.getInstance();
+		
+		System.out.println("Employee Hour service log out");
+		System.out.println("Employee: " + employee.getFirstName() + " " + employee.getLastName() + " is ending shift");
+		System.out.println("It is currently: " + cal.getTime());
+		employeeHoursLogRepo.logOut(employee, cal);
 	}
 
 }
