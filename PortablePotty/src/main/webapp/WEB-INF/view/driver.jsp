@@ -46,8 +46,6 @@
 	nav li{
 		display: inline;
 		float: right;
-		
-	
 	}
 	
 	.active{
@@ -133,6 +131,22 @@
 	.formContainer{
 		border: 1px solid #333;
 		background-color: #555;
+	}
+	
+	#startShiftButton{
+		background-color: green;
+		border: outset;
+		font-size: 6em;
+		color: #fcfcfc;
+		cursor: pointer;
+		position: relative;
+		margin: 1.25em 0 0 0;
+		
+		font-family: "Helvetica Neue", Arial, sans-serif;
+	}
+	
+	#startShiftButton:hover {
+		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 	}
 		
 	/**
@@ -220,17 +234,8 @@
 	<div class="body">
 		
 		<h2>The Portable Potty Worker App</h2>
-		<a href='driver/StartShift.html'><button>Start Shift</button></a>
+		<a href='driver/StartShift.html'><button id="startShiftButton">Start Shift</button></a>
 		
-		
-	<ul>
-		<li><p>Vehicle Safety check</p></li>
-		<li><p>List of required service calls</p></li>
-		<li><p>List of completed service calls</p></li>
-		<li><p>Risk assessment forms</p></li>
-		<li><p>End of shift check</p></li>
-	</ul>
-	
 
 
 	<div class="footer">
