@@ -10,6 +10,8 @@ import com.portable.potty.model.Employee;
 import com.portable.potty.model.Vehicle;
 import com.portable.potty.service.EmployeeHoursLogService;
 import com.portable.potty.service.EmployeeHoursLogServiceImpl;
+import com.portable.potty.service.VehicleOdometerLogService;
+import com.portable.potty.service.VehicleOdometerLogServiceImpl;
 
 @Controller
 
@@ -35,7 +37,8 @@ public class DriverController {
 		System.out.println("driver on shift controller called");
 		System.out.println("What is the odometer?");
 		String odometerReading = "4564652";
-		
+		String truckName = "pt1";
+		this.logKm(odometerReading, truckName);
 		return "driver/OnShift";		
 	}
 	
@@ -45,9 +48,18 @@ public class DriverController {
 	public String driverEndShift(){
 		System.out.println("driver end shift controller called");
 		System.out.println("Driver is Ending Shift");
+		String odometerReading = "4564872";
+		String truckName = "pt1";
 		EmployeeHoursLogService log = new EmployeeHoursLogServiceImpl();
 		log.employeeLogOut(new Employee(22, "John", "Doe", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3"));
+		this.logKm(odometerReading, truckName);
 		return "driver/EndShift";		
+	}
+	
+	private void logKm(String odometerReading, String truckName) {
+		VehicleOdometerLogService vols = new VehicleOdometerLogServiceImpl();
+		vols.logVehicleKm(odometerReading, truckName);
+		
 	}
 	
 }
