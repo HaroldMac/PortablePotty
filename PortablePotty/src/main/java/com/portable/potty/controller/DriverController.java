@@ -40,7 +40,6 @@ public class DriverController {
 	public String driverOnShift(){
 		//Stuff to delete later
 		System.out.println("driver on shift controller called");
-		System.out.println("What is the odometer?");
 		String odometerReading = "4564652";
 		String truckName = "pt1";
 		
@@ -55,7 +54,6 @@ public class DriverController {
 	public String driverEndShift(){
 		//Stuff to delete later
 		System.out.println("driver end shift controller called");
-		System.out.println("Driver is Ending Shift");
 		String odometerReading = "4564872";
 		String truckName = "pt1";
 		Employee employee = new Employee(22, "John", "Doe", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3");

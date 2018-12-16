@@ -139,7 +139,7 @@
 	#calls th {
   		padding-top: 12px;
   		padding-bottom: 12px;
-  		text-align: left;
+  		text-align: center;
   		background-color: #333;
 	}
 	
@@ -254,9 +254,10 @@
 	
 	<div class="body">
 		<h2>The Portable Potty Worker App</h2>
-		<table id="calls">
+		<table id="calls" >
 			<tr>
 				<th></th>
+				<th style="text-decoration: underline;">Completed</th>
 				<th style="text-decoration: underline;">Service</th>
 				<th style="text-decoration: underline;">Company</th>
 				<th style="text-decoration: underline;">Contact</th>
@@ -266,6 +267,7 @@
 			</tr>
 			<tr>
 				<td><img src="PortableFinder/portable.png" style = "width:32px; height:32px; border:0;"></td>
+				<td><input type="checkbox"></td>
 				<td>Cleaning</td>
 				<td>Fake Company</td>
 				<td>Tony Gomez</td>
@@ -275,6 +277,7 @@
 			</tr>
 			<tr>
 				<td><img src="PortableFinder/portable.png" style = "width:32px; height:32px; border:0;"></td>
+				<td><input type="checkbox"></td>
 				<td>Cleaning</td>
 				<td>Fakes-R-Us</td>
 				<td>Sherry Stone </td> 
@@ -284,6 +287,7 @@
 			</tr>
 			<tr>
 				<td><img src="PortableFinder/portable.png" style = "width:32px; height:32px; border:0;"></td>
+				<td><input type="checkbox"></td>
 				<td>Cleaning</td>
 				<td>Fakies</td>
 				<td>Jared Su </td> 
@@ -293,6 +297,7 @@
 			</tr>
 			<tr>
 				<td><img src="PortableFinder/portable.png"style = "width:32px; height:32px; border:0;"></td>
+				<td><input type="checkbox"></td>
 				<td>Deliver</td>
 				<td>New Company</td>
 				<td>Terry Cloth</td>
@@ -302,6 +307,7 @@
 			</tr>
 			<tr>
 				<td><img src="PortableFinder/portable.png" style = "width:32px; height:32px; border:0;"></td>
+				<td><input type="checkbox"></td>
 				<td>Relocation</td>
 				<td>Moving Company</td>
 				<td>Likes T Movitt</td>
@@ -311,6 +317,7 @@
 			</tr>	
 			<tr>
 				<td><img src="PortableFinder/portable.png" style = "width:32px; height:32px; border:0;"></td>
+				<td><input type="checkbox"></td>
 				<td>Removal</td>
 				<td>Fakies</td>
 				<td>Jared Su </td> 
