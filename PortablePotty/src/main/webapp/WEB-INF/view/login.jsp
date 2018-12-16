@@ -46,8 +46,6 @@
 	nav li{
 		display: inline;
 		float: right;
-		
-	
 	}
 	
 	.active{
@@ -97,7 +95,7 @@
 	  margin: 0 auto;
 	  padding-top: 20px;
 	  max-width: 50%;
-	  width: 94%;
+	  width: 73.5%;
 	  text-align: center;
 	}
 	

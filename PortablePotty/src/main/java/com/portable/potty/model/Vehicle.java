@@ -3,15 +3,19 @@ package com.portable.potty.model;
 public class Vehicle {
 	
 	private String truckName;
-	private int id, currentKm, oilChangeNeededKm;
+	private int id, currentKm;
 	
 	public Vehicle(int id, String truckName, int currentKm, int oilChangeNeededKm){
 		this.id = id;
 		this.truckName = truckName;
 		this.currentKm = currentKm;
-		this.oilChangeNeededKm = oilChangeNeededKm;
+
 	}
 
+	public Vehicle(){
+
+	}
+	
 	public String getTruckName() {
 		return truckName;
 	}
@@ -36,13 +40,6 @@ public class Vehicle {
 		this.currentKm = currentKm;
 	}
 
-	public int getOilChangeNeededKm() {
-		return oilChangeNeededKm;
-	}
 
-	public void setOilChangeNeededKm(int oilChangeNeededKm) {
-		this.oilChangeNeededKm = oilChangeNeededKm;
-	}
-	
 
 }

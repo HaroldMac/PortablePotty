@@ -7,6 +7,7 @@
 	<base href="/">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/x-icon" href="images/profilePicture.png">
+	
 	<style type="text/css">
 	
 	html {
@@ -240,7 +241,6 @@
 	
 		<h2>Vehicle Safety and Inspection CheckList</h2>
 		
-			
 			<input type="checkbox" name="VehicleInspectionList" value="start">Fuel
 			<input type="checkbox" name="VehicleInspectionList" value="start">Oil  
 			<input type="checkbox" name="VehicleInspectionList" value="start">Transmission Fluid<br>
@@ -250,10 +250,8 @@
 			<input type="checkbox" name="VehicleInspectionList" value="start">Radio<br><br>
 			Initial Odometer Reading <input type="text" name="StartOdometer"><br>
 			
-		
 		<a href="/driver/OnShift.html"><button id="readToStartButton">Ready to GO!</button></a>
-	</div>
-
+		
 	<div class="footer">
 
 			<div id="contactInfo">

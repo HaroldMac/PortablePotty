@@ -1,14 +1,18 @@
 package com.portable.potty.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.portable.potty.model.Employee;
+import com.portable.potty.model.Vehicle;
 import com.portable.potty.service.EmployeeHoursLogService;
 import com.portable.potty.service.EmployeeHoursLogServiceImpl;
 
 @Controller
+
 public class DriverController {
 	
 	@RequestMapping(value="/driver", method = RequestMethod.GET)
@@ -30,8 +34,12 @@ public class DriverController {
 	public String driverOnShift(){
 		System.out.println("driver on shift controller called");
 		System.out.println("What is the odometer?");
+		String odometerReading = "4564652";
+		
 		return "driver/OnShift";		
 	}
+	
+	
 	
 	@RequestMapping(value="/driver/EndShift", method = RequestMethod.GET)
 	public String driverEndShift(){
