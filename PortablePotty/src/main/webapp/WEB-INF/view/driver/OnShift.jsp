@@ -254,6 +254,7 @@
 	
 	<div class="body">
 		<h2>The Portable Potty Worker App</h2>
+		<h3>Welcome ${employee} </h3>
 		<table id="calls" >
 			<tr>
 				<th></th>

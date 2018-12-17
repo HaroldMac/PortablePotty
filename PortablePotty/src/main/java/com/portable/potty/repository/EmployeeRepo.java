@@ -16,4 +16,6 @@ public interface EmployeeRepo {
 
 	List<Employee> getEmployees();
 
+	int getHighestId();
+
 }

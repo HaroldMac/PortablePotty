@@ -46,7 +46,7 @@ public class EmployeeRepoImpl implements EmployeeRepo {
 	public void removeEmployee(Employee employee) {
 		System.out.println("Removing " + employee.getFirstName() + " " + employee.getLastName());
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see com.portable.potty.repository.EmployeeRepo#getEmployees()
 	 */
@@ -58,6 +58,14 @@ public class EmployeeRepoImpl implements EmployeeRepo {
 		employees.add(new Employee(3, "Sakura", "Haruna", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3"));
 		employees.add(new Employee(4, "Tidus", "Jecht", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3"));
 		return employees;
+	}
+	
+	/* (non-Javadoc)
+	 * @see com.portable.potty.repository.EmployeeRepo#getHighestId()
+	 */
+	@Override
+	public int getHighestId() {
+		return this.getEmployees().size(); 
 	}
 
 }

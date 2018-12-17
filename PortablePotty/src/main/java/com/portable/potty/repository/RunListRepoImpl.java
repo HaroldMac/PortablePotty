@@ -8,7 +8,7 @@ import com.portable.potty.model.Customer;
 import com.portable.potty.model.Employee;
 import com.portable.potty.model.RunList;
 
-public class RunListRepoImpl {
+public class RunListRepoImpl implements RunListRepo {
 
 	//public Call(String service, String location, int biWeeklyFrequency, Customer customer) {
 	//public Customer(int id, String customerName, String address, String contactName, String phoneNumber) {
@@ -19,6 +19,10 @@ public class RunListRepoImpl {
 	//Customer customer4  = new Customer(4, "Frauds", "5679 Faux Dr, Calgary NE, B3C 7D4", "Adip Elit", "4030004755");
 	
 	
+	/* (non-Javadoc)
+	 * @see com.portable.potty.repository.RunListRepo#getRunList(int)
+	 */
+	@Override
 	public RunList getRunList(int runListId) {
 		
 		List<Call> calls = new ArrayList<Call>();
@@ -32,6 +36,10 @@ public class RunListRepoImpl {
 		return runList;
 	}
 	
+	/* (non-Javadoc)
+	 * @see com.portable.potty.repository.RunListRepo#getRunList(com.portable.potty.model.Employee, java.lang.String)
+	 */
+	@Override
 	public RunList getRunList(Employee employee, String dayOfWeek) {
 		
 		List<Call> calls = new ArrayList<Call>();
@@ -45,6 +53,10 @@ public class RunListRepoImpl {
 		return runList;
 	}
 	
+	/* (non-Javadoc)
+	 * @see com.portable.potty.repository.RunListRepo#getRunList()
+	 */
+	@Override
 	public RunList getRunList() {
 		
 		List<Call> calls = new ArrayList<Call>();
@@ -60,10 +72,18 @@ public class RunListRepoImpl {
 	
 	
 	
+	/* (non-Javadoc)
+	 * @see com.portable.potty.repository.RunListRepo#updateRunList(com.portable.potty.model.RunList)
+	 */
+	@Override
 	public void updateRunList(RunList runList) {
 		System.out.println("Updating runlist");
 	}
 	
+	/* (non-Javadoc)
+	 * @see com.portable.potty.repository.RunListRepo#removeRunList(com.portable.potty.model.RunList)
+	 */
+	@Override
 	public void removeRunList(RunList runList) {
 		System.out.println("removing runlist");
 	}

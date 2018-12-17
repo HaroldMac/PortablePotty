@@ -10,6 +10,8 @@ import com.portable.potty.model.Employee;
 import com.portable.potty.model.Vehicle;
 import com.portable.potty.service.EmployeeHoursLogService;
 import com.portable.potty.service.EmployeeHoursLogServiceImpl;
+import com.portable.potty.service.RunListService;
+import com.portable.potty.service.RunListServiceImpl;
 import com.portable.potty.service.VehicleOdometerLogService;
 import com.portable.potty.service.VehicleOdometerLogServiceImpl;
 
@@ -37,11 +39,13 @@ public class DriverController {
 	}
 	
 	@RequestMapping(value="/driver/OnShift", method = RequestMethod.GET)
-	public String driverOnShift(){
+	public String driverOnShift(Model model){
 		//Stuff to delete later
 		System.out.println("driver on shift controller called");
 		String odometerReading = "4564652";
 		String truckName = "pt1";
+		
+		model.addAttribute("employee", "Joe Joe");
 		
 		//Required code
 		this.logKm(odometerReading, truckName);
@@ -69,5 +73,10 @@ public class DriverController {
 		VehicleOdometerLogService vols = new VehicleOdometerLogServiceImpl();
 		vols.logVehicleKm(odometerReading, truckName);
 	}
+	
+	private void getRunList() {
+		EmployeeS
+	}
+	
 	
 }
