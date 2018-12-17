@@ -30,8 +30,8 @@ public class RunListRepoImpl implements RunListRepo {
 		Customer customer2 = new Customer(2, "FakeCompany", "5679 Faux Dr, Calgary NE, B3C 7D4", "Dolar Sit", "4030002755");
 		Employee employee = new Employee(1, "John", "Doe", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3");
 
-		calls.add(new Call("Cleaning", "5050 Spruce Dr SW, Calgary, AB T3C 3B2", 4 , customer1));
-		calls.add(new Call("Cleaning", "4011 1a St SW, Calgary, AB T2S 2P5", 8, customer2));
+		calls.add(new Call("Cleaning", "5050 Spruce Dr SW, Calgary, AB T3C 3B2", 4 , customer1, "Laura Ipso", "4067650424"));
+		calls.add(new Call("Cleaning", "4011 1a St SW, Calgary, AB T2S 2P5", 8, customer2, "Dolar Sit", "4067650424"));
 		RunList runList = new RunList(employee, "tuesday", calls);
 		return runList;
 	}
@@ -47,8 +47,8 @@ public class RunListRepoImpl implements RunListRepo {
 		Customer customer2 = new Customer(2, "FakeCompany", "5679 Faux Dr, Calgary NE, B3C 7D4", "Dolar Sit", "4030002755");
 		//Employee employee = new Employee(1, "John", "Doe", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3");
 
-		calls.add(new Call("Cleaning", "5050 Spruce Dr SW, Calgary, AB T3C 3B2", 4 , customer1));
-		calls.add(new Call("Cleaning", "4011 1a St SW, Calgary, AB T2S 2P5", 8, customer2));
+		calls.add(new Call("Cleaning", "5050 Spruce Dr SW, Calgary, AB T3C 3B2", 4 , customer1, "Laura Ipso", "4067650424"));
+		calls.add(new Call("Cleaning", "4011 1a St SW, Calgary, AB T2S 2P5", 8, customer2, "Dolar Sit", "4067650424"));
 		RunList runList = new RunList(employee, "tuesday", calls);
 		return runList;
 	}
@@ -64,8 +64,8 @@ public class RunListRepoImpl implements RunListRepo {
 		Customer customer2 = new Customer(2, "FakeCompany", "5679 Faux Dr, Calgary NE, B3C 7D4", "Dolar Sit", "4030002755");
 		Employee employee = new Employee(1, "John", "Doe", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3");
 
-		calls.add(new Call("Cleaning", "5050 Spruce Dr SW, Calgary, AB T3C 3B2", 4 , customer1));
-		calls.add(new Call("Cleaning", "4011 1a St SW, Calgary, AB T2S 2P5", 8, customer2));
+		calls.add(new Call("Cleaning", "5050 Spruce Dr SW, Calgary, AB T3C 3B2", 4 , customer1, "Laura Ipso", "4067650424"));
+		calls.add(new Call("Cleaning", "4011 1a St SW, Calgary, AB T2S 2P5", 8, customer2, "Dolar Sit", "4067650424"));
 		RunList runList = new RunList(employee, "tuesday", calls);
 		return runList;
 	}

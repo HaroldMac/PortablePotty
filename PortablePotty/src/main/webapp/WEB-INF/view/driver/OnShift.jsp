@@ -266,6 +266,7 @@
 			    <th style="text-decoration: underline;">Current Address</th>
 			    <th style="text-decoration: underline;">New Address</th>
 			</tr>
+			${runlist} 
 			<tr>
 				<td><img src="PortableFinder/portable.png" style = "width:32px; height:32px; border:0;"></td>
 				<td><input type="checkbox"></td>

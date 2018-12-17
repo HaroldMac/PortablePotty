@@ -6,12 +6,31 @@ public class Call {
 	private String location;
 	private int biWeeklyFrequency;		//every two weeks
 	private Customer customer;
+	private String contactName;
+	private String phoneNumber;
 
-	public Call(String service, String location, int biWeeklyFrequency, Customer customer) {
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public Call(String service, String location, int biWeeklyFrequency, Customer customer, String contactName, String phoneNummber) {
 		this.service = service;
 		this.location = location;
 		this.biWeeklyFrequency = biWeeklyFrequency;
 		this.customer = customer;
+		this.contactName = contactName;
+	}
+
+	public String getContactName() {
+		return contactName;
+	}
+
+	public void setContactName(String contactName) {
+		this.contactName = contactName;
 	}
 
 	public String getService() {
