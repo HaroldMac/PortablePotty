@@ -46,8 +46,6 @@
 	nav li{
 		display: inline;
 		float: right;
-		
-	
 	}
 	
 	.active{
@@ -134,6 +132,21 @@
 		border: 1px solid #333;
 		background-color: #555;
 	}
+	
+	#startShiftButton{
+		background-color: green;
+		border: outset;
+		font-size: 6em;
+		color: #fcfcfc;
+		cursor: pointer;
+		position: relative;
+		margin: 1.25em 0 0 0;	
+		font-family: "Helvetica Neue", Arial, sans-serif;
+	}
+	
+	#startShiftButton:hover {
+		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	}
 		
 	/**
 	 * Footer Styles
@@ -201,7 +214,7 @@
 	  		max-width: 100%;
 	  	}
 	}			
-	
+		
 	</style>
 		
 </head>
@@ -219,21 +232,10 @@
 	
 	<div class="body">
 		
+	
 		<h2>The Portable Potty Worker App</h2>
+		<a href='dispatch/startShift.html'><button id="startShiftButton">Start Shift</button></a>
 		
-		<h4>Dispatcher</h4>
-	<ul>
-		<li><p>List of call required service calls by date</p></li>
-		<li><p>List of special services</p></li>
-		<li><p>List of all completed service calls</p></li>
-		<li><p>Map of services required by day</p></li>
-		<li><p>Estimated location of driver</p></li>
-		<li><p>Service to estimate best driver/route for a given service</p></li>
-		<li><p>Calculate optimal route</p></li>
-	</ul>
-	<a href="/login"> back</a>
-	</div>
-
 	<div class="footer">
 
 			<div id="contactInfo">

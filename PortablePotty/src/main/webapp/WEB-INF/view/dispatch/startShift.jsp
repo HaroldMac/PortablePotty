@@ -255,7 +255,7 @@
 			Truck Name: ${trucktList}<br><br>
 			Initial Odometer Reading <input type="text" name="StartOdometer"><br>
 			
-		<a href="/dispatch/OnShift.html"><button id="readToStartButton">Ready to GO!</button></a>
+		<a href="/dispatch/onShift.html"><button id="readToStartButton">Ready to GO!</button></a>
 		
 	<div class="footer">
 

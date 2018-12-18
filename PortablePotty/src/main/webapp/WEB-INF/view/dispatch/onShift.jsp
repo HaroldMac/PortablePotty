@@ -269,7 +269,7 @@
 			${runlist} 
 			
 		</table>
-		<a href="/dispatch/EndShift.html"><button id="doneCallsButton">Done Calls</button></a>
+		<a href="/dispatch/endShift.html"><button id="doneCallsButton">Done Calls</button></a>
 	</div>	
 
 	
