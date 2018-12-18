@@ -8,6 +8,7 @@ public class Call {
 	private Customer customer;
 	private String contactName;
 	private String phoneNumber;
+	private String relocationAddress;
 
 	public String getPhoneNumber() {
 		return phoneNumber;
@@ -23,6 +24,23 @@ public class Call {
 		this.biWeeklyFrequency = biWeeklyFrequency;
 		this.customer = customer;
 		this.contactName = contactName;
+	}
+	
+	public Call(String service, String location, String newLocation, int biWeeklyFrequency, Customer customer, String contactName, String phoneNummber) {
+		this.service = service;
+		this.location = location;
+		this.relocationAddress = newLocation;
+		this.biWeeklyFrequency = biWeeklyFrequency;
+		this.customer = customer;
+		this.contactName = contactName;
+	}
+
+	public String getRelocationAddress() {
+		return relocationAddress;
+	}
+
+	public void setRelocationAddress(String relocationAddress) {
+		this.relocationAddress = relocationAddress;
 	}
 
 	public String getContactName() {

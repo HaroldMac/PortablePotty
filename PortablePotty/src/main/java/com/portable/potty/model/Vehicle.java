@@ -5,11 +5,10 @@ public class Vehicle {
 	private String truckName;
 	private int id, currentKm;
 	
-	public Vehicle(int id, String truckName, int currentKm, int oilChangeNeededKm){
+	public Vehicle(int id, String truckName, int currentKm){
 		this.id = id;
 		this.truckName = truckName;
 		this.currentKm = currentKm;
-
 	}
 
 	public Vehicle(){
@@ -39,7 +38,4 @@ public class Vehicle {
 	public void setCurrentKm(int currentKm) {
 		this.currentKm = currentKm;
 	}
-
-
-
 }

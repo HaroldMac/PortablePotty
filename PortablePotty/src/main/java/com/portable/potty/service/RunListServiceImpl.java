@@ -6,6 +6,8 @@ import java.util.List;
 import com.portable.potty.model.Call;
 import com.portable.potty.model.Employee;
 import com.portable.potty.model.RunList;
+import com.portable.potty.repository.RunListRepo;
+import com.portable.potty.repository.RunListRepoImpl;
 
 public class RunListServiceImpl implements RunListService {
 	
@@ -60,8 +62,9 @@ public class RunListServiceImpl implements RunListService {
 	 */
 	@Override
 	public RunList getRunList(int routeId, String dayOfWeek) {
-		RunList runList = new RunList();
-		return runList;
+		
+		RunListRepo rlr = new RunListRepoImpl();
+		return rlr.getRunList(routeId);
 	}
 	
 	/* (non-Javadoc)
@@ -69,8 +72,8 @@ public class RunListServiceImpl implements RunListService {
 	 */
 	@Override
 	public RunList getRunList(Employee employee, String dayOfWeek) {
-		RunList runList = new RunList();
-		return runList;
+		RunListRepo rlr = new RunListRepoImpl();
+		return rlr.getRunList(employee, dayOfWeek);
 	}
 	
 	
@@ -83,7 +86,6 @@ public class RunListServiceImpl implements RunListService {
 		List<Call> optimizedCalls = new ArrayList<Call>();
 		return optimizedCalls;
 	}
-	
 	
 	
 	

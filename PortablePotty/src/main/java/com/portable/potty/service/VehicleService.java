@@ -1,10 +1,10 @@
-package com.portable.potty.repository;
+package com.portable.potty.service;
 
 import java.util.List;
 
 import com.portable.potty.model.Vehicle;
 
-public interface VehicleRepo {
+public interface VehicleService {
 
 	Vehicle getVehicle(int id);
 

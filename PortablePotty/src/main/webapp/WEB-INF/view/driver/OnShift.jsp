@@ -245,6 +245,7 @@
 		<nav>		
 			<ul>		
 				<li><a href="/login.html">Sign In</a></li>
+				<li>Welcome, ${employee} }</li>
 			</ul>
 			<br>
 		<H1>Portable Potty</H1>	
@@ -254,7 +255,6 @@
 	
 	<div class="body">
 		<h2>The Portable Potty Worker App</h2>
-		<h3>Welcome ${employee} </h3>
 		<table id="calls" >
 			<tr>
 				<th></th>
@@ -267,66 +267,7 @@
 			    <th style="text-decoration: underline;">New Address</th>
 			</tr>
 			${runlist} 
-			<tr>
-				<td><img src="PortableFinder/portable.png" style = "width:32px; height:32px; border:0;"></td>
-				<td><input type="checkbox"></td>
-				<td>Cleaning</td>
-				<td>Fake Company</td>
-				<td>Tony Gomez</td>
-				<td>(403)000-0001</td>
-		        <td><a href="https://www.google.ca/maps/place/5050+Spruce+Dr+SW,+Calgary,+AB+T3C+3B2" target="_blank">5050 Spruce Dr SW, Calgary, AB T3C 3B2 </a> </td>
-		        <td></td>
-			</tr>
-			<tr>
-				<td><img src="PortableFinder/portable.png" style = "width:32px; height:32px; border:0;"></td>
-				<td><input type="checkbox"></td>
-				<td>Cleaning</td>
-				<td>Fakes-R-Us</td>
-				<td>Sherry Stone </td> 
-				<td>(403)000-0010</td>
-			    <td><a href="https://www.google.ca/maps/place/4011+1a+St+SW,+Calgary,+AB+T2S+2P5" target="_blank">4011 1a St SW, Calgary, AB T2S 2P5</a></td>
-			    <td></td>
-			</tr>
-			<tr>
-				<td><img src="PortableFinder/portable.png" style = "width:32px; height:32px; border:0;"></td>
-				<td><input type="checkbox"></td>
-				<td>Cleaning</td>
-				<td>Fakies</td>
-				<td>Jared Su </td> 
-				<td>(403) 000-0011</td>
-			    <td><a href="https://www.google.ca/maps/place/50.897982,-114.011723" target="_blank">Fish Creek Park</a></td>
-			    <td></td>
-			</tr>
-			<tr>
-				<td><img src="PortableFinder/portable.png"style = "width:32px; height:32px; border:0;"></td>
-				<td><input type="checkbox"></td>
-				<td>Deliver</td>
-				<td>New Company</td>
-				<td>Terry Cloth</td>
-				<td>(403)000-0100</td>
-				<td><a href="https://www.google.ca/maps/place/Range+Road+53,+Sexsmith,+AB+T0H+3C0" target="_blank">Range Road 53, Sexsmith, AB T0H 3C0</a> </td>
-				<td></td>
-			</tr>
-			<tr>
-				<td><img src="PortableFinder/portable.png" style = "width:32px; height:32px; border:0;"></td>
-				<td><input type="checkbox"></td>
-				<td>Relocation</td>
-				<td>Moving Company</td>
-				<td>Likes T Movitt</td>
-				<td>(403)000-0101</td>
-				<td><a href="https://www.google.ca/maps/place/5050+Spruce+Dr+SW,+Calgary,+AB+T3C+3B2" target="_blank">1301 16 Ave NW, Calgary, AB T2M 0L4 </a> </td>
-				<td><a href="https://www.google.ca/maps/place/51.1885508,-114.4729189" target="_blank">Canyon Meadows Golf Club </a> </td>
-			</tr>	
-			<tr>
-				<td><img src="PortableFinder/portable.png" style = "width:32px; height:32px; border:0;"></td>
-				<td><input type="checkbox"></td>
-				<td>Removal</td>
-				<td>Fakies</td>
-				<td>Jared Su </td> 
-				<td>(403) 000-0011</td>
-			    <td><a href="https://www.google.ca/maps/place/50.897982,-114.011723" target="_blank">Fish Creek Park</a></td>
-			    <td></td>
-			</tr>
+			
 		</table>
 		<a href="/driver/EndShift.html"><button id="doneCallsButton">Done Calls</button></a>
 	</div>	

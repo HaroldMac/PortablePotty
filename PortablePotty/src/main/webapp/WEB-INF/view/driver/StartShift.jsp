@@ -152,7 +152,11 @@
 	
 	#vehicleSafeyCheckList {
 		text-align: left;
-		
+	}
+	
+	select{
+		font-family: "Times New Roman", Times, serif;
+		font-size: 1.25em;
 	}
 		
 	/**
@@ -248,6 +252,7 @@
 			<input type="checkbox" name="VehicleInspectionList" value="start">Tires
 			<input type="checkbox" name="VehicleInspectionList" value="start">lights 
 			<input type="checkbox" name="VehicleInspectionList" value="start">Radio<br><br>
+			Truck Name: ${trucktList}<br><br>
 			Initial Odometer Reading <input type="text" name="StartOdometer"><br>
 			
 		<a href="/driver/OnShift.html"><button id="readToStartButton">Ready to GO!</button></a>

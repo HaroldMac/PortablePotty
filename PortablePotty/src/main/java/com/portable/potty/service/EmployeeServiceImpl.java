@@ -2,10 +2,13 @@ package com.portable.potty.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.portable.potty.model.Employee;
 import com.portable.potty.repository.EmployeeRepo;
 import com.portable.potty.repository.EmployeeRepoImpl;
 
+@Service
 public class EmployeeServiceImpl implements EmployeeService {
 	
 	/* (non-Javadoc)

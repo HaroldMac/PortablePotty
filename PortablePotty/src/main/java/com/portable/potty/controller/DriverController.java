@@ -1,12 +1,10 @@
 package com.portable.potty.controller;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -14,8 +12,6 @@ import com.portable.potty.model.Call;
 import com.portable.potty.model.Employee;
 import com.portable.potty.model.RunList;
 import com.portable.potty.model.Vehicle;
-import com.portable.potty.repository.RunListRepo;
-import com.portable.potty.repository.RunListRepoImpl;
 import com.portable.potty.service.EmployeeHoursLogService;
 import com.portable.potty.service.EmployeeHoursLogServiceImpl;
 import com.portable.potty.service.EmployeeService;
@@ -24,25 +20,26 @@ import com.portable.potty.service.RunListService;
 import com.portable.potty.service.RunListServiceImpl;
 import com.portable.potty.service.VehicleOdometerLogService;
 import com.portable.potty.service.VehicleOdometerLogServiceImpl;
+import com.portable.potty.service.VehicleService;
+import com.portable.potty.service.VehicleServiceImpl;
 
 @Controller
-
 public class DriverController {
 	
 	@RequestMapping(value="/driver", method = RequestMethod.GET)
 	public String driverPage(){
-		//System.out.println("driver controller called");
 		return "driver";		
 	}
 	
 	@RequestMapping(value="/driver/StartShift", method = RequestMethod.GET)
-	public String driverInspection(){
+	public String driverInspection(Model model){
 		//Stuff to delete later
 		System.out.println("driver start shift controller called");
 		System.out.println("Driver is Starting Shift");
 		Employee employee = new Employee(22, "John", "Doe", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3"); 
 		
 		//Required Code
+		model.addAttribute("trucktList", this.vehicleDropDownBox());
 		EmployeeHoursLogService log = new EmployeeHoursLogServiceImpl();
 		log.employeeLogIn(employee);
 		return "driver/StartShift";		
@@ -90,43 +87,94 @@ public class DriverController {
 	private RunList getRunList(int employeeId) {
 		EmployeeService es = new EmployeeServiceImpl();
 		Employee employee = es.getEmployee(employeeId);
+		RunListService rls = new RunListServiceImpl();
 		Calendar cal = Calendar.getInstance();
-		int day = cal.DAY_OF_WEEK;
-		String[] strDays = new String[] { "Sunday", "Monday", "Tuesday", "Wednesday", "Thusday", "Friday", "Saturday" };
-		RunListRepo rlr = new RunListRepoImpl();
-		return rlr.getRunList(employee, strDays[day-1]);
+		String day = this.getDayOfWeek(cal.DAY_OF_WEEK);
+		System.out.println("works till here");
+		return rls.getRunList(employee, day);
 	}
 	
 	private String printRunListAsHTML(RunList runList) {
 		String html = "";
 		List<Call> calls = runList.getCalls();
-		//for (int i=0; i < calls.size(); i++) {
 		for (Call call : calls) {
 			html += "<tr><td><img src='PortableFinder/portable.png' style = 'width:32px; height:32px; border:0;''></td><td><input type='checkbox'></td>";
 			html += "<td>" + call.getService() + "</td>";
-			html += "<td>" + call.getCustomer() + "</td>";
+			html += "<td>" + call.getCustomer().getCustomerName() + "</td>";
 			html += "<td>" + call.getContactName() + "</td>";
-			html += "<td>" + call.getPhoneNumber()+ "</td>";
-			html += "<td>" + call.getLocation() + "</td>";
+			html += "<td>" + call.getCustomer().getPhoneNumber() + "</td>";
+			html += "<td>" + this.getGoogleMapsLink(call.getLocation()) + "</td>";
+			if (call.getService().toLowerCase().equals("relocation")) {
+				html += "<td>" + this.getGoogleMapsLink(call.getRelocationAddress()) + "</td>";
+			} else {
+				System.out.println("No relocation" + " " + call.getService());
+			}
+			
 			html += "<td></td></tr>"; 
+			this.getGoogleMapsLink(call.getLocation());
 		}
-		/*
-
-		<td>Fake Company</td>
-		<td>Tony Gomez</td>
-		<td>(403)000-0001</td>
-        <td><a href="https://www.google.ca/maps/place/5050+Spruce+Dr+SW,+Calgary,+AB+T3C+3B2" target="_blank">5050 Spruce Dr SW, Calgary, AB T3C 3B2 </a> </td>
-        <td></td>
-	</tr>
-	*/
 		return html;
 	}
 	
 	private String getGoogleMapsLink(String address) {
-		String link = "<td><a href="; 
-		System.out.println(address);
-		return "";
+		address = address.trim();
+		String linkAddress = address.replace(" ", "+");
+		String link = "<a href='https://www.google.ca/maps/place/" + linkAddress +  "' target='_blank'>" + address + "</a>";
+		return link;
 	}
 	
+	private String getDayOfWeek(int day) {
+		System.out.println("the id of the day of the week is " + day);
+		String[] days = new String[] { "Sunday", "Monday", "Tuesday", "Wednesday", "Thusday", "Friday", "Saturday" };
+		return days[day-1];
+	}
+	
+	private String vehicleDropDownBox() {
+		String dropDownBox = "<select>";
+		VehicleService vs = new VehicleServiceImpl();
+		List<Vehicle> vehicles = vs.getAllVehicles();
+		System.out.println("vehicledropdown box");
+		for (Vehicle vehicle: vehicles) {
+			System.out.println("vehicledropdown box in loop");
+			dropDownBox += "<option value='" + vehicle.getId() + "'>" + vehicle.getTruckName() + "</option>";
+		}
+		dropDownBox += "</select>";
+		return dropDownBox;
+	}
+	
+/*	
+ *  A couple of cases for onshift to handle
+ * 
+	<tr>
+	<td><img src="PortableFinder/portable.png" style = "width:32px; height:32px; border:0;"></td>
+	<td><input type="checkbox"></td>
+	<td>Cleaning</td>
+	<td>Fakies</td>
+	<td>Jared Su </td> 
+	<td>(403) 000-0011</td>
+    <td><a href="https://www.google.ca/maps/place/50.897982,-114.011723" target="_blank">Fish Creek Park</a></td>
+    <td></td>
+</tr>
+<tr>
+	<td><img src="PortableFinder/portable.png"style = "width:32px; height:32px; border:0;"></td>
+	<td><input type="checkbox"></td>
+	<td>Deliver</td>
+	<td>New Company</td>
+	<td>Terry Cloth</td>
+	<td>(403)000-0100</td>
+	<td><a href="https://www.google.ca/maps/place/Range+Road+53,+Sexsmith,+AB+T0H+3C0" target="_blank">Range Road 53, Sexsmith, AB T0H 3C0</a> </td>
+	<td></td>
+</tr>
+<tr>
+	<td><img src="PortableFinder/portable.png" style = "width:32px; height:32px; border:0;"></td>
+	<td><input type="checkbox"></td>
+	<td>Relocation</td>
+	<td>Moving Company</td>
+	<td>Likes T Movitt</td>
+	<td>(403)000-0101</td>
+	<td><a href="https://www.google.ca/maps/place/5050+Spruce+Dr+SW,+Calgary,+AB+T3C+3B2" target="_blank">1301 16 Ave NW, Calgary, AB T2M 0L4 </a> </td>
+	<td><a href="https://www.google.ca/maps/place/51.1885508,-114.4729189" target="_blank">Canyon Meadows Golf Club </a> </td>
+</tr>	
+*/
 	
 }
