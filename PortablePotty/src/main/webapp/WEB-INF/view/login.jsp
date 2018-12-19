@@ -220,7 +220,7 @@
 		<h2>The Portable Potty Worker App</h2>
 		
 		
-			<form>
+			<form action="/login" method="POST">
 				<div id="formContainer">
 					<p>Please Sign In!</p><br>
 					<div id="boxes">
@@ -228,7 +228,7 @@
 						<input type="password" id="uPass" name="uPass" placeholder="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><br>
 						<input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
 						<br><br>
-						<input type="submit" value="Sign In" onclick="signin()">
+						<input type="submit" value="Sign In">
 						</div>
 						<a href="/driver.html"> Driver</a>
 						<a href="/dispatcher.html"> Dispatcher</a>

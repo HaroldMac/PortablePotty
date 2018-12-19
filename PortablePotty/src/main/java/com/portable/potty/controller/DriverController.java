@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.portable.potty.model.Call;
 import com.portable.potty.model.Employee;
@@ -23,7 +24,9 @@ import com.portable.potty.service.VehicleOdometerLogServiceImpl;
 import com.portable.potty.service.VehicleService;
 import com.portable.potty.service.VehicleServiceImpl;
 
+
 @Controller
+@SessionAttributes("employee")
 public class DriverController {
 	
 	@RequestMapping(value="/driver", method = RequestMethod.GET)
