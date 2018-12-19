@@ -244,8 +244,9 @@
 	<div id="header">
 		<nav>		
 			<ul>		
+				<li>Welcome, ${employee}</li>
 				<li><a href="/login.html">Sign In</a></li>
-				<li>Welcome, ${employee} }</li>
+				
 			</ul>
 			<br>
 		<H1>Portable Potty</H1>	

@@ -2,6 +2,7 @@ package com.portable.potty.controller;
 
 import java.util.Calendar;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,7 +31,7 @@ import com.portable.potty.service.VehicleServiceImpl;
 public class DriverController {
 	
 	@RequestMapping(value="/driver", method = RequestMethod.GET)
-	public String driverPage(){
+	public String driverPage(Model model){
 		return "driver";		
 	}
 	
@@ -50,17 +51,20 @@ public class DriverController {
 	
 	@RequestMapping(value="/driver/OnShift", method = RequestMethod.GET)
 	public String driverOnShift(Model model){
-		//Stuff to delete later
+
+		Map<String, Object> myModel = model.asMap();
+		String employeeName = (String) myModel.get("employee");
+		EmployeeService es = new EmployeeServiceImpl();
+		
+		System.out.println(employeeName + " from session attributes");
 		System.out.println("driver on shift controller called");
 		String odometerReading = "4564652";
 		String truckName = "pt1";
 		RunList rl = this.getRunList(0);
-		System.out.println("The current day of the week is" + rl.getDayOfWeek());
-		model.addAttribute("employee", "Joe Joe");
 		
 		String callList = this.printRunListAsHTML(rl);
 		model.addAttribute("runlist", callList);
-		//Required code
+
 		this.logKm(odometerReading, truckName);
 		return "driver/OnShift";		
 	}
@@ -68,7 +72,7 @@ public class DriverController {
 	
 	
 	@RequestMapping(value="/driver/EndShift", method = RequestMethod.GET)
-	public String driverEndShift(){
+	public String driverEndShift(Model model){
 		//Stuff to delete later
 		System.out.println("driver end shift controller called");
 		String odometerReading = "4564872";
@@ -93,7 +97,6 @@ public class DriverController {
 		RunListService rls = new RunListServiceImpl();
 		Calendar cal = Calendar.getInstance();
 		String day = this.getDayOfWeek(cal.DAY_OF_WEEK);
-		System.out.println("works till here");
 		return rls.getRunList(employee, day);
 	}
 	
@@ -136,9 +139,7 @@ public class DriverController {
 		String dropDownBox = "<select>";
 		VehicleService vs = new VehicleServiceImpl();
 		List<Vehicle> vehicles = vs.getAllVehicles();
-		System.out.println("vehicledropdown box");
 		for (Vehicle vehicle: vehicles) {
-			System.out.println("vehicledropdown box in loop");
 			dropDownBox += "<option value='" + vehicle.getId() + "'>" + vehicle.getTruckName() + "</option>";
 		}
 		dropDownBox += "</select>";

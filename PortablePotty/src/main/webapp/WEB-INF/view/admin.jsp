@@ -208,7 +208,8 @@
 <body>
 	<div id="header">
 		<nav>		
-			<ul>		
+			<ul>
+			    <li>Welcome, ${employee}</li>		
 				<li><a href="/login">Sign In</a></li>
 			</ul>
 			<br>
