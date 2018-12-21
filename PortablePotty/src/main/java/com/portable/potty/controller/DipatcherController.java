@@ -91,6 +91,7 @@ public class DipatcherController {
 	private String printDriversAsHtmlTab(List<Employee> employees) {
 		String html = "";
 		for (Employee e: employees) {
+			
 			html += "<button class=\"tablinks\" onclick=\"openDriver(event, '" + e.getFirstName() + "')\">" + e.getFirstName() + "</button>";
 		}
 		return html;
@@ -137,6 +138,7 @@ public class DipatcherController {
 			html += this.createTable();
 			RunList runList = this.getRunList(driver.getId());
 			html += this.printRunListAsHTML(runList);
+			html += "</table>";
 			html += "</div>";
 		}
 		
