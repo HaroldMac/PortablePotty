@@ -24,7 +24,7 @@ public class EmployeeRepoImpl implements EmployeeRepo {
 	 */
 	@Override
 	public Employee getEmployee(int id){
-		Employee e = new Employee(id, "John", "Doe", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3");
+		Employee e = new Employee(id, "driver", "John", "Doe", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3");
 		System.out.println("Returning employee with id " + e.getId());
 		return e;
 	}
@@ -34,7 +34,7 @@ public class EmployeeRepoImpl implements EmployeeRepo {
 	 */
 	@Override
 	public Employee getEmployee(String firstName, String lastName){
-		Employee e = new Employee(1, firstName, lastName, "4030005555", "1234 Employee St, Calgary NW, A1B 2C3");
+		Employee e = new Employee(1, "driver", firstName, lastName, "4030005555", "1234 Employee St, Calgary NW, A1B 2C3");
 		System.out.println("Returning employee with name " + e.getFirstName() + " " + e.getLastName());
 		return e;
 	}
@@ -53,10 +53,10 @@ public class EmployeeRepoImpl implements EmployeeRepo {
 	@Override
 	public List<Employee> getEmployees(){
 		List<Employee> employees = new ArrayList<Employee>();
-		employees.add(new Employee(1, "John", "Doe", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3"));
-		employees.add(new Employee(2, "Jane", "Doe", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3"));
-		employees.add(new Employee(3, "Sakura", "Haruna", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3"));
-		employees.add(new Employee(4, "Tidus", "Jecht", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3"));
+		employees.add(new Employee(1, "driver", "John", "Doe", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3"));
+		employees.add(new Employee(2, "driver", "Jane", "Doe", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3"));
+		employees.add(new Employee(3, "dispatcher", "Sakura", "Haruna", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3"));
+		employees.add(new Employee(4, "admim","Tidus", "Jecht", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3"));
 		return employees;
 	}
 	

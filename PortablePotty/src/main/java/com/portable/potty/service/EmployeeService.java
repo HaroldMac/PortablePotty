@@ -12,6 +12,6 @@ public interface EmployeeService {
 
 	List<Employee> getAllEmployees();
 
-	void addEmployee(String firstName, String lastName, String phoneNumber, String address);
+	void addEmployee(String position, String firstName, String lastName, String phoneNumber, String address);
 
 }

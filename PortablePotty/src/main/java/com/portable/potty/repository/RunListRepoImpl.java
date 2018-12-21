@@ -53,7 +53,7 @@ public class RunListRepoImpl implements RunListRepo {
 	private RunList getStubData() {
 		List<Call> calls = new ArrayList<Call>();
 		
-		Employee employee0 = new Employee(0, "John", "Doe" , "5030005555", "1234 Employee St, Calgary NW, A1B 2C3");
+		Employee employee0 = new Employee(0, "driver", "John", "Doe" , "5030005555", "1234 Employee St, Calgary NW, A1B 2C3");
 		Customer customer0 = new Customer(0, "Faux Company", "5679 Faux Dr, Calgary NE, B3C 7D4", "Laura Ipso", "4030001755");
 		Customer customer1 = new Customer(1, "Fake Company", "4659 Faux Dr, Calgary NE, B3C 7D4", "Dolar Sit", "4030002755");
 		Customer customer2 = new Customer(2, "Froggies",     "1301 16 Ave, Calgary Nw, T2M 0L4", "Guy Gal", "4030001755");

@@ -40,7 +40,7 @@ public class DriverController {
 		//Stuff to delete later
 		System.out.println("driver start shift controller called");
 		System.out.println("Driver is Starting Shift");
-		Employee employee = new Employee(22, "John", "Doe", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3"); 
+		Employee employee = new Employee(22, "driver", "John", "Doe", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3"); 
 		
 		//Required Code
 		model.addAttribute("trucktList", this.vehicleDropDownBox());
@@ -77,7 +77,7 @@ public class DriverController {
 		System.out.println("driver end shift controller called");
 		String odometerReading = "4564872";
 		String truckName = "pt1";
-		Employee employee = new Employee(22, "John", "Doe", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3");
+		Employee employee = new Employee(22, "driver", "John", "Doe", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3");
 		
 		//required code
 		EmployeeHoursLogService log = new EmployeeHoursLogServiceImpl();

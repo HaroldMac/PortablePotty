@@ -38,15 +38,16 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return er.getEmployees();
 	}
 	
+
 	/* (non-Javadoc)
-	 * @see com.portable.potty.service.EmployeeService#addEmployee(java.lang.String, java.lang.String, java.lang.String, java.lang.String)
+	 * @see com.portable.potty.service.EmployeeService#addEmployee(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)
 	 */
 	@Override
-	public void addEmployee(String firstName, String lastName, String phoneNumber, String address) {
+	public void addEmployee(String position, String firstName, String lastName, String phoneNumber, String address) {
 		//public Employee(int id, String firstName, String lastName, String phoneNumber, String address) {
 		EmployeeRepo er = new EmployeeRepoImpl();
 		int nextId = er.getHighestId() + 1;
-		Employee employee = new Employee(nextId, firstName, lastName, phoneNumber, address);
+		Employee employee = new Employee(nextId, position, firstName, lastName, phoneNumber, address);
 		er.addEmployee(employee);
 	}
 

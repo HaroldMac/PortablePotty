@@ -6,13 +6,23 @@ public class Employee {
 	private String firstName, lastName;
 	private String phoneNumber;
 	private String address;
+	private String position;
 	
-	public Employee(int id, String firstName, String lastName, String phoneNumber, String address) {
+	public Employee(int id, String position, String firstName, String lastName, String phoneNumber, String address) {
 		this.id = id;
+		this.position = position;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.phoneNumber = phoneNumber;
 		this.address = address;
+	}
+
+	public String getPosition() {
+		return position;
+	}
+
+	public void setPosition(String position) {
+		this.position = position;
 	}
 
 	public int getId() {
