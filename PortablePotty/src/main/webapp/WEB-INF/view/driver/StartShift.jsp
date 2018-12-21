@@ -1,4 +1,4 @@
-<!doctype html>
+<link rel="icon" type="image/x-icon" href="images/profilePicture.jpg"><!doctype html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -6,7 +6,7 @@
 	
 	<base href="/">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/x-icon" href="images/profilePicture.png">
+	<link rel="icon" type="image/x-icon" href="images/profilePicture.jpg">
 	
 	<style type="text/css">
 	
