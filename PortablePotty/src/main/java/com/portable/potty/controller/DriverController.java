@@ -104,7 +104,7 @@ public class DriverController {
 		String html = "";
 		List<Call> calls = runList.getCalls();
 		for (Call call : calls) {
-			html += "<tr><td><img src='PortableFinder/portable.png' style = 'width:32px; height:32px; border:0;''></td><td><input type='checkbox'></td>";
+			html += "<tr><td><img src='images/profilePicture.jpg' style = 'width:32px; height:32px; border:0;''></td><td><input type='checkbox'></td>";
 			html += "<td>" + call.getService() + "</td>";
 			html += "<td>" + call.getCustomer().getCustomerName() + "</td>";
 			html += "<td>" + call.getContactName() + "</td>";
