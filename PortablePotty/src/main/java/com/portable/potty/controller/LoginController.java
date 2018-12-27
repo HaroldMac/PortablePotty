@@ -1,6 +1,9 @@
 package com.portable.potty.controller;
 
+import java.util.Map;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,37 +17,42 @@ import com.portable.potty.service.LoginService;
 import com.portable.potty.service.LoginServiceImpl;
 
 @Controller
-@SessionAttributes("employee")
+@SessionAttributes("employeeId")
 public class LoginController {
 	
 	@RequestMapping(value="/login", method = RequestMethod.GET)
-	public String loginPage(){
-		System.out.println("login Page controller called");
+	public String loginPage(Model model){
 		return "login";		
 	}
 	
 	@RequestMapping(value="/login", method = RequestMethod.POST)
 	public String handleLoginRequest(@RequestParam String uName, @RequestParam String uPass, ModelMap model){
-		System.out.println("handle login Page controller called: " + uName);
+
 		LoginService ls = new LoginServiceImpl();
 		EmployeeService es = new EmployeeServiceImpl();
 		if (ls.isValid(uName, uPass)){
-			System.out.println("valid username and password");
 			int employeeId = ls.validateUser(uName, uPass);
 			Employee employee = es.getEmployee(employeeId);
+			model.addAttribute("employeeId", employee.getId());
 			model.addAttribute("employee", employee.getFirstName());
-			System.out.println("employee is " + employee.getFirstName());
-			if (uName.equals("driver1")) {
-				return "driver";
+			if (uName.equals("driver1") || uName.equals("driver2") ) {
+				return "forward:driver";
 			} else if (uName.equals("dispatcher")) {
 				return "dispatcher";
 			} else if (uName.equals("admin")) {
 				return "admin";
-			}
-			
+			}		
 		}
 		
 		return "login";		
+	}
+	
+	private Employee getEmployeeFromModel(Model model) {
+		Map<String, Object> myModel = model.asMap();
+		int employeeId = (int) myModel.get("employeeId");
+		EmployeeService es = new EmployeeServiceImpl();
+		Employee employee = es.getEmployee(employeeId);
+		return employee;
 	}
 
 }

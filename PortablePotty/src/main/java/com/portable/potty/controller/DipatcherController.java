@@ -23,7 +23,7 @@ import com.portable.potty.service.VehicleService;
 import com.portable.potty.service.VehicleServiceImpl;
 
 @Controller
-@SessionAttributes("employee")
+@SessionAttributes("employeeId")
 public class DipatcherController {
 
 	@RequestMapping(value="/dispatcher", method = RequestMethod.GET)

@@ -27,23 +27,39 @@ import com.portable.potty.service.VehicleServiceImpl;
 
 
 @Controller
-@SessionAttributes("employee")
+@SessionAttributes("employeeId")
 public class DriverController {
 	
 	@RequestMapping(value="/driver", method = RequestMethod.GET)
 	public String driverPage(Model model){
+
+		System.out.println("driverpage called");
+		
+		Employee employee = this.getEmployeeFromModel(model);
+		System.out.println("method driverPage " + employee.getFirstName());
+		model.addAttribute("employee", employee.getFirstName());
+		return "driver";		
+	}
+	
+	@RequestMapping(value="/driver", method = RequestMethod.POST)
+	public String driverPagePostMethod(Model model){
+
+		System.out.println("driverpagePostMethod called");
+		
+		Employee employee = this.getEmployeeFromModel(model);
+		System.out.println("method driverPage" + employee.getFirstName());
+		model.addAttribute("employee", employee.getFirstName());
 		return "driver";		
 	}
 	
 	@RequestMapping(value="/driver/StartShift", method = RequestMethod.GET)
 	public String driverInspection(Model model){
-		//Stuff to delete later
-		System.out.println("driver start shift controller called");
-		System.out.println("Driver is Starting Shift");
-		Employee employee = new Employee(22, "driver", "John", "Doe", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3"); 
+
+		Employee employee = this.getEmployeeFromModel(model);
 		
 		//Required Code
 		model.addAttribute("trucktList", this.vehicleDropDownBox());
+		model.addAttribute("employee", employee.getFirstName());
 		EmployeeHoursLogService log = new EmployeeHoursLogServiceImpl();
 		log.employeeLogIn(employee);
 		return "driver/StartShift";		
@@ -52,12 +68,8 @@ public class DriverController {
 	@RequestMapping(value="/driver/OnShift", method = RequestMethod.GET)
 	public String driverOnShift(Model model){
 
-		Map<String, Object> myModel = model.asMap();
-		String employeeName = (String) myModel.get("employee");
-		EmployeeService es = new EmployeeServiceImpl();
+		Employee employee = this.getEmployeeFromModel(model);
 		
-		System.out.println(employeeName + " from session attributes");
-		System.out.println("driver on shift controller called");
 		String odometerReading = "4564652";
 		String truckName = "pt1";
 		RunList rl = this.getRunList(0);
@@ -77,7 +89,8 @@ public class DriverController {
 		System.out.println("driver end shift controller called");
 		String odometerReading = "4564872";
 		String truckName = "pt1";
-		Employee employee = new Employee(22, "driver", "John", "Doe", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3");
+		
+		Employee employee = this.getEmployeeFromModel(model);
 		
 		//required code
 		EmployeeHoursLogService log = new EmployeeHoursLogServiceImpl();
@@ -120,6 +133,14 @@ public class DriverController {
 			this.getGoogleMapsLink(call.getLocation());
 		}
 		return html;
+	}
+	
+	private Employee getEmployeeFromModel(Model model) {
+		Map<String, Object> myModel = model.asMap();
+		int employeeId = (int) myModel.get("employeeId");
+		EmployeeService es = new EmployeeServiceImpl();
+		Employee employee = es.getEmployee(employeeId);
+		return employee;
 	}
 	
 	private String getGoogleMapsLink(String address) {

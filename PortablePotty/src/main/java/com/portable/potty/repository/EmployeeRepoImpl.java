@@ -31,7 +31,7 @@ public class EmployeeRepoImpl implements EmployeeRepo {
 	 */
 	@Override
 	public Employee getEmployee(int id){
-		Employee e = new Employee(99, "driver", "John", "Doe", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3");
+		Employee e = new Employee(99, "driver", "Something is", "Wrong", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3");
 		for (Employee employee: employees) {
 			if (employee.getId() == id){
 				e = employee;
@@ -46,7 +46,7 @@ public class EmployeeRepoImpl implements EmployeeRepo {
 	 */
 	@Override
 	public Employee getEmployee(String firstName, String lastName){
-		Employee e = new Employee(99, "driver", "John", "Doe", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3");
+		Employee e = new Employee(99, "driver", "Not sure", "What Happened", "4030005555", "1234 Employee St, Calgary NW, A1B 2C3");
 		
 		for (Employee employee: employees) {
 			if ((employee.getFirstName().toLowerCase().equals(firstName)) && (employee.getLastName().toLowerCase().equals(lastName))){
