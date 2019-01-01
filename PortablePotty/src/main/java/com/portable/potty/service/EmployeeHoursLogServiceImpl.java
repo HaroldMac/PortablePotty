@@ -25,7 +25,7 @@ public class EmployeeHoursLogServiceImpl implements EmployeeHoursLogService {
 		
 		System.out.println("Employee Hour service log in");
 		System.out.println("Employee: " + employee.getFirstName() + " " + employee.getLastName() + " is starting shift");
-		System.out.println("It is currently: " + cal.getTime());
+		System.out.println("It is currently " + cal.getTime().getDay() + " at " + cal.getTime().getHours() + ":" + cal.getTime().getMinutes());
 		employeeHoursLogRepo.logIn(employee, cal);
 	}
 	
@@ -38,8 +38,15 @@ public class EmployeeHoursLogServiceImpl implements EmployeeHoursLogService {
 		
 		System.out.println("Employee Hour service log out");
 		System.out.println("Employee: " + employee.getFirstName() + " " + employee.getLastName() + " is ending shift");
-		System.out.println("It is currently: " + cal.getTime());
+		System.out.println("It is currently " + this.getDayOfWeek(cal.getTime().getDay()) + " at " + cal.getTime().getHours() + ":" + cal.getTime().getMinutes());
 		employeeHoursLogRepo.logOut(employee, cal);
+	}
+	
+	
+	private String getDayOfWeek(int day) {
+		System.out.println("the id of the day of the week is " + day);
+		String[] days = new String[] { "Sunday", "Monday", "Tuesday", "Wednesday", "Thusday", "Friday", "Saturday" };
+		return days[day-1];
 	}
 
 }
