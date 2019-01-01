@@ -1,7 +1,10 @@
 	html {
+	  width: 50%;
+	  max-width: 50%;
+	  margin: 0 0 0 25%;
 	  height: 100%;
 	  box-sizing: border-box;
-	  background-color: #595959;
+
 	  color: #fcfcfc;
 
 	}
@@ -29,7 +32,7 @@
 		list-style-type: none;
 		margin: 0.5em 0;
 		top: 0;
-		width: 73.5%;
+		//width: 73.5%;
 		text-align: center;
 	}
 	
@@ -65,15 +68,17 @@
 		
 	/**
 	 * Body Styles
+	  background-color: #595959;
 	 */
 	
 	
 	body {
 	  position: relative;
 	  margin: 0;
-	  padding-bottom: 9.8rem;
+	  padding-bottom: 19.8rem;
 	  min-height: 100%;
 	  font-family: "Helvetica Neue", Arial, sans-serif;
+	  backgrhound-color: #fcfcfc;
 	}
 	
 	.body ul{
@@ -84,11 +89,11 @@
 	}
 	
 	.body {
-	  margin: 0 auto;
+	  margin: 0;
 	  padding-top: 20px;
-	  max-width: 50%;
-	  width: 94%;
+	  padding-bottom: 9.4rem;
 	  text-align: center;
+	  background-color: #595959;
 	}
 	
 	.body h1 {

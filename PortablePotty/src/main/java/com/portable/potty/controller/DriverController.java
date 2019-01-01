@@ -33,10 +33,10 @@ public class DriverController {
 	@RequestMapping(value="/driver", method = RequestMethod.GET)
 	public String driverPage(Model model){
 
-		System.out.println("driverpage called");
+		//System.out.println("driverpage called");
 		
 		Employee employee = this.getEmployeeFromModel(model);
-		System.out.println("method driverPage " + employee.getFirstName());
+		//System.out.println("method driverPage " + employee.getFirstName());
 		model.addAttribute("employee", employee.getFirstName());
 		return "driver";		
 	}
@@ -44,10 +44,10 @@ public class DriverController {
 	@RequestMapping(value="/driver", method = RequestMethod.POST)
 	public String driverPagePostMethod(Model model){
 
-		System.out.println("driverpagePostMethod called");
+		//System.out.println("driverpagePostMethod called");
 		
 		Employee employee = this.getEmployeeFromModel(model);
-		System.out.println("method driverPage" + employee.getFirstName());
+		//System.out.println("method driverPagePostMethod " + employee.getFirstName());
 		model.addAttribute("employee", employee.getFirstName());
 		return "driver";		
 	}
@@ -56,8 +56,8 @@ public class DriverController {
 	public String driverInspection(Model model){
 
 		Employee employee = this.getEmployeeFromModel(model);
-		
-		//Required Code
+		//System.out.println("method driverInspectionGetMethod " + employee.getFirstName());
+
 		model.addAttribute("trucktList", this.vehicleDropDownBox());
 		model.addAttribute("employee", employee.getFirstName());
 		EmployeeHoursLogService log = new EmployeeHoursLogServiceImpl();
@@ -69,13 +69,15 @@ public class DriverController {
 	public String driverOnShift(Model model){
 
 		Employee employee = this.getEmployeeFromModel(model);
+		System.out.println("method driver On SHift GETMethod " + employee.getFirstName());
 		
 		String odometerReading = "4564652";
 		String truckName = "pt1";
-		RunList rl = this.getRunList(0);
+		RunList rl = this.getRunList(employee.getId());
 		
 		String callList = this.printRunListAsHTML(rl);
 		model.addAttribute("runlist", callList);
+		model.addAttribute("employee", employee.getFirstName());
 
 		this.logKm(odometerReading, truckName);
 		return "driver/OnShift";		
@@ -91,9 +93,11 @@ public class DriverController {
 		String truckName = "pt1";
 		
 		Employee employee = this.getEmployeeFromModel(model);
+		System.out.println("method driverEndShiftGETMethod " + employee.getFirstName());
 		
 		//required code
 		EmployeeHoursLogService log = new EmployeeHoursLogServiceImpl();
+		model.addAttribute("employee", employee.getFirstName());
 		log.employeeLogOut(employee);
 		this.logKm(odometerReading, truckName);
 		return "driver/EndShift";		
